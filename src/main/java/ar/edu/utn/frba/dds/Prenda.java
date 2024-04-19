@@ -5,7 +5,7 @@ import static java.util.Objects.requireNonNull;
 public class Prenda {
   private TipoDePrenda tipoDePrenda;
   private Material material;
-  private Trama trama;
+  private Trama trama = Trama.LISA;
   private Color colorPrimario;
   private Color colorSecundario;
 
@@ -22,5 +22,9 @@ public class Prenda {
   // al ser optativo no lo pongo en el constructor
   public void setColorSecundario(Color colorSecundario) {
     this.colorSecundario = colorSecundario;
+  }
+
+  public boolean esDeCategoria(Categoria categoria) {
+    return this.tipoDePrenda.getCategoria().equals(categoria);
   }
 }

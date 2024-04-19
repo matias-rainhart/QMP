@@ -15,6 +15,9 @@ public class Persona {
     prendas.add(prenda);
   }
 
+  public void comenzarConstruccionDePrenda(TipoDePrenda tipo){
+    this.prendaEnConstruccion = new PrendaBorrador(tipo);
+  }
   public void terminarConstruccionPrenda(){
     this.prendas.add(this.prendaEnConstruccion.construirPrenda());
     this.prendaEnConstruccion = null;
