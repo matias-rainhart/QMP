@@ -1,19 +1,21 @@
 package ar.edu.utn.frba.dds;
 
-public class Prenda {
-  private Tipo tipo;
-  private String material;
-  private String colorPrimario;
-  private String colorSecundario;
+import static java.util.Objects.requireNonNull;
 
-  public Prenda(Tipo tipo, String material, String colorPrimario) {
-    this.tipo = tipo;
-    this.material = material;
-    this.colorPrimario = colorPrimario;
+public class Prenda {
+  private TipoDePrenda tipoDePrenda;
+  private String material;
+  private Color colorPrimario;
+  private Color colorSecundario;
+
+  public Prenda(TipoDePrenda tipo, String material, Color colorPrimario) {
+    this.tipoDePrenda = requireNonNull(tipo, "tipo de prenda es obligatorio");
+    this.material = requireNonNull(material, "material es obligatorio");
+    this.colorPrimario = requireNonNull(colorPrimario, "color primario es obligatorio");
   }
 
   // al ser optativo no lo pongo en el constructor
-  public void setColorSecundario(String colorSecundario) {
+  public void setColorSecundario(Color colorSecundario) {
     this.colorSecundario = colorSecundario;
   }
 }
