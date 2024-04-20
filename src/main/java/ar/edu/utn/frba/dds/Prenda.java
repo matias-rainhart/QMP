@@ -9,14 +9,12 @@ public class Prenda {
   private Color colorPrimario;
   private Color colorSecundario;
 
+  //no hace falta verificar que no sean nulls en el constructor porque tengo un builder
   public Prenda(TipoDePrenda tipo, Material material, Color colorPrimario, Trama trama) {
-    this.tipoDePrenda = requireNonNull(tipo, "tipo de prenda es obligatorio");
-    this.material = requireNonNull(material, "material es obligatorio");
-    this.colorPrimario = requireNonNull(colorPrimario, "color primario es obligatorio");
-    if (trama == null){
-      trama = Trama.LISA;
-    }
-    this.trama = requireNonNull(trama, "trama es obligatorio");
+    this.tipoDePrenda = tipo;
+    this.material = material;
+    this.colorPrimario = colorPrimario;
+    this.trama = trama;
   }
 
   // al ser optativo no lo pongo en el constructor
