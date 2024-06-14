@@ -15,10 +15,11 @@ public class Usuario {
     prendas.add(prenda);
   }
 
-  public void comenzarConstruccionDePrenda(TipoDePrenda tipo){
+  public void comenzarConstruccionDePrenda(TipoDePrenda tipo) {
     this.prendaEnConstruccion = new PrendaBuilder(tipo);
   }
-  public void terminarConstruccionPrenda(){
+
+  public void terminarConstruccionPrenda() {
     this.prendas.add(this.prendaEnConstruccion.construirPrenda());
     this.prendaEnConstruccion = null;
   }

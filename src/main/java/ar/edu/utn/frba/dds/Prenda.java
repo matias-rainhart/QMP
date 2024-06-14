@@ -1,7 +1,5 @@
 package ar.edu.utn.frba.dds;
 
-import static java.util.Objects.requireNonNull;
-
 public class Prenda {
   private TipoDePrenda tipoDePrenda;
   private Material material;

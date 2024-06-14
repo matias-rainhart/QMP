@@ -11,10 +11,4 @@ public class TipoDePrenda {
   public Categoria getCategoria() {
     return categoria;
   }
-
-  public static final TipoDePrenda CHOMBA = new TipoDePrenda(Categoria.PARTE_SUPERIOR);
-
-  public static final TipoDePrenda PANTALON = new TipoDePrenda(Categoria.PARTE_INFERIOR);
-
-  public static final TipoDePrenda ZAPATILLAS = new TipoDePrenda(Categoria.CALZADO);
 }

@@ -4,7 +4,7 @@ package ar.edu.utn.frba.dds;
 import static java.util.Objects.requireNonNull;
 
 public class PrendaBuilder {
-  private TipoDePrenda tipo;
+  private final TipoDePrenda tipo;
   private Trama trama = Trama.LISA;
   private Material material;
   private Color colorPrincipal;
@@ -16,7 +16,7 @@ public class PrendaBuilder {
 
   public PrendaBuilder conTrama(Trama trama) {
     this.trama = trama;
-    if (trama == null){
+    if (trama == null) {
       this.trama = Trama.LISA;
     }
     return this;
@@ -33,17 +33,17 @@ public class PrendaBuilder {
     return this;
   }
 
-  public Prenda construirPrenda(){
-  if (tipo == null || material == null || colorPrincipal == null){
-   throw new RuntimeException(" PRENDA NO VÁLIDA !! faltan datos obligatorios para crear la prenda");
-  }
+  public Prenda construirPrenda() {
+    if (tipo == null || material == null || colorPrincipal == null) {
+      throw new RuntimeException(" PRENDA NO VÁLIDA !! faltan datos obligatorios para crear la prenda");
+    }
 
-  Prenda prenda = new Prenda(tipo, material, colorPrincipal, trama);
-  if (colorSecundario != null){
-    prenda.setColorSecundario(colorSecundario);
-  }
+    Prenda prenda = new Prenda(tipo, material, colorPrincipal, trama);
+    if (colorSecundario != null) {
+      prenda.setColorSecundario(colorSecundario);
+    }
 
-  return prenda;
+    return prenda;
   }
 
 }
