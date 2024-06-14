@@ -3,11 +3,11 @@ package ar.edu.utn.frba.dds;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Persona {
+public class Usuario {
   private List<Prenda> prendas;
-  private PrendaBorrador prendaEnConstruccion; //sería el borrador
+  private PrendaBuilder prendaEnConstruccion; //sería el borrador
 
-  public Persona() {
+  public Usuario() {
     prendas = new ArrayList<Prenda>();
   }
 
@@ -16,7 +16,7 @@ public class Persona {
   }
 
   public void comenzarConstruccionDePrenda(TipoDePrenda tipo){
-    this.prendaEnConstruccion = new PrendaBorrador(tipo);
+    this.prendaEnConstruccion = new PrendaBuilder(tipo);
   }
   public void terminarConstruccionPrenda(){
     this.prendas.add(this.prendaEnConstruccion.construirPrenda());
